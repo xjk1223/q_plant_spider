@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "q_plant_spider"
+version = "1.0.0"
+description = "自动化数据采集和上传工具，用于从NIO Q-Plant系统抓取数据并将其上传到飞书多维表格"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Jack xu", email = "744785164@qq.com"}
+]
+classifiers = [
+"Programming Language :: Python :: 3",
+"Programming Language :: Python :: 3.8",
+"Programming Language :: Python :: 3.9",
+"Programming Language :: Python :: 3.10",
+"License :: OSI Approved :: MIT License",
+"Operating System :: OS Independent",
+]
+[project.urls]
+"Homepage" = "https://github.com/xjk1223/q-plant-spider"
+"Bug Tracker" = "https://github.com/xjk1223/q-plant-spider/issues"
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+include = '\.pyi?$'
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "--cov=src"

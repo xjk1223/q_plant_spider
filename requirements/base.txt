@@ -1,0 +1,13 @@
+# 核心依赖
+python-dotenv>=1.0.0
+lark-oapi>=1.0.46
+requests>=2.31.0
+selenium>=4.14.0
+webdriver-manager>=4.0.1
+
+# 网络和异步
+aiohttp>=3.8.5
+websockets>=11.0.3
+
+# 工具库
+Pillow>=10.0.0 

@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  q-plant-spider:
+    build: .
+    container_name: q-plant-spider
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs
+      - ./downloaded_images:/app/downloaded_images
+      - ./.env:/app/.env
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      - q-plant-network
+
+  # 可选：添加监控服务
+  # prometheus:
+  #   image: prom/prometheus
+  #   container_name: prometheus
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./prometheus:/etc/prometheus
+  #     - prometheus_data:/prometheus
+  #   networks:
+  #     - q-plant-network
+
+  # grafana:
+  #   image: grafana/grafana
+  #   container_name: grafana
+  #   restart: unless-stopped
+  #   volumes:
+  #     - grafana_data:/var/lib/grafana
+  #   networks:
+  #     - q-plant-network
+  #   ports:
+  #     - "3000:3000"
+
+networks:
+  q-plant-network:
+    driver: bridge
+
+# volumes:
+#   prometheus_data:
+#   grafana_data: 
