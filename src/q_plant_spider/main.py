@@ -119,14 +119,14 @@ def main():
                 event_handler=event_handler.handler,
                 log_level=lark.LogLevel.ERROR
             )
-
+            logger.info("飞书机器人服务启动成功")
             
             # 获取事件循环
             loop = asyncio.get_event_loop()
             
             # 启动客户端
             cli.start()
-            logger.info("飞书机器人服务启动成功")
+
             end_time = time.time()
             elapsed_time = end_time - start_time
             logger.info(f'服务启动耗时: {elapsed_time:.2f}秒')

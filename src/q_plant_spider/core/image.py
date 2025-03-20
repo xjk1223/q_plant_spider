@@ -89,9 +89,7 @@ class ImageHandler:
         
         try:
             image_url = (
-                'https://qplant.nioint.com/q-plant-admin-front/q-plant-basic/'
-                f'attachmentFmsAndBox/attachmentDownload?attachmentId={attachment_id}'
-                '&boxToken=null'
+                f'https://qplant-f3.nioint.com/q-plant-admin-front/q-plant-basic/attachmentFmsAndBox/attachmentDownload?attachmentId={attachment_id}&boxToken=null'
             )
             
             # 下载图片(带重试)
@@ -197,3 +195,4 @@ class ImageHandler:
         except Exception as e:
             logger.error(f"处理图片过程中发生错误: {e}")
             return [] 
+        

@@ -196,8 +196,8 @@ class QueryService:
                     if not id:
                         continue
                     
-                    logger.info(f"获取问题详情 ID: {id}")
-                    Detail_url = 'https://qplant.nioint.com/q-plant-admin-front/q-plant-issue/issueInfo/queryIssueDetail'
+
+                    Detail_url = 'https://qplant-f3.nioint.com/q-plant-admin-front/q-plant-issue/issueInfo/queryIssueDetail'
                     
                     resp = requests.post(Detail_url, json={'id': id}, cookies=cookies)
                     resp.raise_for_status()

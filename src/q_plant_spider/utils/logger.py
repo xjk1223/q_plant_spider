@@ -9,9 +9,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-def setup_logging(log_level: int = logging.INFO, 
+def setup_logging(log_level: int = logging.DEBUG, 
                   log_file: Optional[str] = None,
-                  console_level: int = logging.INFO) -> logging.Logger:
+                  console_level: int = logging.DEBUG) -> logging.Logger:
     """
     配置日志系统
     

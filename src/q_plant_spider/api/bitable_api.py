@@ -154,32 +154,7 @@ APP_TOKEN = os.getenv("APP_TOKEN")
 TABLE_ID = os.getenv("TABLE_ID")
 BATCH_SIZE = int(os.getenv("BATCH_SIZE", "990"))
 
-# 字段映射，确保与exam_lark_use_api.py中的定义一致
-KEY_MAPPING = {
-    'id': '问题ID',
-    'pvi': 'PVI',
-    'vin': 'VIN',
-    'pvbr': 'PVBR',
-    'modelTypeCode': '车型',
-    'modeYear': '车款',
-    'driveDirection': '行驶方向',
-    'issueDesc': '问题描述',
-    'issueLevel': '等级',
-    'factoryCode': '录入工厂',
-    'responsibilityDeptName': '责任部门-初判',
-    'workshopName': '录入车间',
-    'prodlineName': '录入产线', 
-    'stationNo': '录入工位',
-    'findPostName': '录入岗位',
-    'createUser': '发现人',
-    'reportTime': '记录时间',
-    'repairStationName': '返工工位',
-    'repairUser': '返工人',
-    'issueRemark': '备注',
-    'shift': '工作时段名称',
-    'classes': '班次',
-    'otherDesc': '问题补充'
-}
+
 
 def get_existing_ids() -> List[str]:
     """
