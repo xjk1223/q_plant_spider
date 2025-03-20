@@ -61,7 +61,7 @@ class QueryManager:
             time_info = query_params.get('time_info', '')
             model_type_code = query_params.get('modelTypeCode', '')
             
-            url = ('https://qplant.nioint.com/q-plant-admin-front/q-plant-issue/'
+            url = ('https://qplant-f3.nioint.com/q-plant-admin-front/q-plant-issue/'
                   'frame_center/define/query/list/issue_info_vehicle_operator')
                   
             logger.info(
@@ -150,7 +150,7 @@ class QueryManager:
             
             logger.info(f"响应状态码: {response.status_code}")
             logger.info(f"响应时间: {response.elapsed.total_seconds()}s")
-            
+
             if response.status_code != 200:
                 return {
                     'data': None,
@@ -213,8 +213,7 @@ class QueryManager:
                 logger.info(f"处理问题ID: {issue_id}")
                 
                 # 获取问题详情
-                detail_url = ('https://qplant.nioint.com/q-plant-admin-front/'
-                            'q-plant-issue/issueInfo/queryIssueDetail')
+                detail_url = ('https://qplant-f3.nioint.com/q-plant-admin-front/q-plant-issue/issueInfo/queryIssueDetail')
                 
                 response = requests.post(
                     detail_url,
@@ -234,3 +233,14 @@ class QueryManager:
         except Exception as e:
             logger.error(f"获取问题详情时发生错误: {e}")
             return [] 
+        
+
+if __name__ == "__main__":
+    query_manager = QueryManager()
+    query_params = {
+        'PVBR': '',
+        'time_info': '~',
+        'modelTypeCode': 'Cetus'
+    }
+    result = query_manager.query_issue(query_params)
+    print(result)

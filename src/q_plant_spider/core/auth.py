@@ -39,7 +39,8 @@ class AuthManager:
 
     # URL配置
     URLS = {
-        'login_url': 'https://signin-f2.nio.com/login?service=https%3A%2F%2Fsignin-f2.nio.com%2Foauth2%2FcallbackAuthorize%3Fclient_id%3D100656%26redirect_uri%3Dhttps%253A%252F%252Fqplant.nioint.com%252Fq-plant-admin-front%252Faccount%252Fsso%253Fredirect_to%253D%25252Fq-plant-admin-front%25252F%26sso_region%3Dcn'
+        'login_url': 'https://signin.nio.com/login?service=https%3A%2F%2Fsignin.nio.com%2Foauth2%2FcallbackAuthorize%3Fclient_id%3D2000114%26redirect_uri%3Dhttps%253A%252F%252Fqplant-f3.nioint.com%252Fq-plant-admin-front%252Faccount%252Fsso%253Fredirect_to%253Dhttps%25253A%25252F%25252Fqplant-f3.nioint.com%25252Fq-plant-admin-front%25252F%26sso_region%3Dcn'
+
     }
 
     # 页面元素定位
@@ -81,7 +82,7 @@ class AuthManager:
         # 基础配置
         options.add_argument('--headless=new')
         options.add_argument(f'window-size={self.BROWSER_CONFIG["window_size"]}')
-        
+
         # 性能优化
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
